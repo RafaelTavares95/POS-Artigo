@@ -28,11 +28,11 @@
 \maketitle
 
 \begin{abstract}
-   resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo 
+O objetivo desse artigo é apresentar os principais conceitos de uma Arquitetura orientada a serviços (SOA) e seus seus princípios, bem como padrões de serviços fundamentais apresentados por Thomas Erl em seu livro SOA Design Patterns (2008), que são aplicados na solução de problemas comuns encontrados no desenvolvimento de sistemas baseados em SOA. A união de princípios e padrões de design, formam um conjunto de boas práticas essencial a qualquer projeto.   
 \end{abstract}
    
 \begin{resumo} 
-  resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo
+The objective of this paper is to present the main concepts of a Service-Oriented Architecture (SOA) and its principles, well as Foundational Service Patterns presented by Thomas Erl in his book SOA Design Patterns (2008), which are applied in solving common problems encountered in the development of systems based on SOA. The union of principles and design patterns, form a core set of good practices to any project.
 \end{resumo}
 
 
@@ -40,20 +40,18 @@
 
 Arquitetura orientada a serviços ou SOA (Service-Oriented Architecture) é descrita de forma diferente por vários autores, alguns o vêem como um estilo técnico de arquitetura que fornece os meios para integrar sistemas distintos e expor as funções de negócios reutilizáveis. Outros autores, no entanto, ter uma visão muito mais ampla:
 
-SOA é uma abordagem arquitetural corporativa que permite a criação de serviços de negócio interoperáveis que podem facilmente ser reutilizados e compartilhados entre aplicações e empresas. [Gartner Group]
+SOA é uma abordagem arquitetural corporativa que permite a criação de serviços de negócio interoperáveis que podem facilmente ser reutilizados e compartilhados entre aplicações e empresas.
 
+A arquitetura orientada a serviços é um estilo de design que orienta todos os aspectos da criação e utilização de serviços de negócios em todo o seu ciclo de vida (desde a concepção à aposentadoria). %\cite{newcomer}
 
-A arquitetura orientada a serviços é um estilo de design que orienta todos os aspectos da criação e utilização de serviços de negócios em todo o seu ciclo de vida (desde a concepção à aposentadoria). [Newcomer, Lomow, p. 13]
-
-
-Arquitetura Orientada a Serviços (SOA) é um paradigma para organização e utilização de capacidades distribuídas que podem estar sob controle de diferentes domínios proprietários. [OASIS Ref Model]
+Arquitetura Orientada a Serviços (SOA) é um paradigma para organização e utilização de capacidades distribuídas que podem estar sob controle de diferentes domínios proprietários. %\cite{oasis}
 
 De maneira simples, SOA é uma abordagem de negócios para criar sistemas de TI (Tecnologia de Informação) que permitem alavancar recursos existentes, criar novos recursos e, principalmente, estar preparado para inevitáveis alterações exigidas pelo mercado, obtendo mais produtividade e lucro para a empresa.
 
 
 \section{Princípios de Design} 
 
-Os Princípios de design são uma representação do paradigma de design orientado a serviços, eles estipulam boas praticas para construção de um sistema baseado em SOA bem implementado. A seguir estão os princípios de design de serviços listados por Thomas ERL(2009):
+Os Princípios de design são uma representação do paradigma de design orientado a serviços, eles estipulam boas praticas para construção de um sistema baseado em SOA bem implementado. A seguir estão os princípios de design de serviços listados por %\citeonline{thomas}:
 
 \begin{itemize}
 \item Service Abstraction
@@ -93,80 +91,15 @@ The subsection titles must be in boldface, 12pt, flush left.
 
 The subsection titles must be in boldface, 12pt, flush left.
 
-\subsection{Service Encapsulation}
-
-The subsection titles must be in boldface, 12pt, flush left.
-
-
-\section{Nessa seção fala das figuras e como vocês podem colocar elas no texto - Apagar depois}\label{sec:figs}
-
-
-Figure and table captions should be centered if less than one line
-(Figure~\ref{fig:exampleFig1}), otherwise justified and indented by 0.8cm on
-both margins, as shown in Figure~\ref{fig:exampleFig2}. The caption font must
-be Helvetica, 10 point, boldface, with 6 points of space before and after each
-caption.
-
-\begin{figure}[ht]
-\centering
-\includegraphics[width=.5\textwidth]{fig1.jpg}
-\caption{A typical figure}
-\label{fig:exampleFig1}
-\end{figure}
-
-\begin{figure}[ht]
-\centering
-\includegraphics[width=.3\textwidth]{fig2.jpg}
-\caption{This figure is an example of a figure caption taking more than one
-  line and justified considering margins mentioned in Section~\ref{sec:figs}.}
-\label{fig:exampleFig2}
-\end{figure}
-
-In tables, try to avoid the use of colored or shaded backgrounds, and avoid
-thick, doubled, or unnecessary framing lines. When reporting empirical data,
-do not use more decimal digits than warranted by their precision and
-reproducibility. Table caption must be placed before the table (see Table 1)
-and the font used must also be Helvetica, 10 point, boldface, with 6 points of
-space before and after each caption.
-
-\begin{table}[ht]
-\centering
-\caption{Variables to be considered on the evaluation of interaction
-  techniques}
-\label{tab:exTable1}
-\smallskip
-\begin{tabular}{|l|c|c|}
-\hline
-& Value 1 & Value 2\\[0.5ex]
-\hline
-&&\\[-2ex]
-Case 1 & 1.0 $\pm$ 0.1 & 1.75$\times$10$^{-5}$ $\pm$ 5$\times$10$^{-7}$\\[0.5ex]
-\hline
-&&\\[-2ex]
-Case 2 & 0.003(1) & 100.0\\[0.5ex]
-\hline
-\end{tabular}
-\end{table}
+% if you need to include a figure(eps format), code:
+% \begin{figure}[ht]
+% \centering
+% \includegraphics[width=.5\textwidth]{fig}
+% \caption{A typical figure}
+% \label{fig:exampleFig1}
+% \end{figure}
 
 \section{Considerações Finais}
-
-All images and illustrations should be in black-and-white, or gray tones,
-	excepting for the papers that will be electronically available (on CD-ROMs,
-	internet, etc.). The image resolution on paper should be about 600 dpi for
-	black-and-white images, and 150-300 dpi for grayscale images.  Do not include
-	images with excessive resolution, as they may take hours to print, without any
-	visible difference in the result. 
-	
-	\section{References}
-	
-	Bibliographic references must be unambiguous and uniform.  We recommend giving
-	the author names references in brackets, e.g. \cite{knuth:84},
-	\cite{boulic:91}, and \cite{smith:99}.
-	
-	The references must be listed using 12 point font size, with 6 points of space
-	before each reference. The first line of each reference should not be
-	indented, while the subsequent should be indented by 0.5 cm.
-	
 
 \bibliographystyle{sbc}
 \bibliography{sbc-template}
