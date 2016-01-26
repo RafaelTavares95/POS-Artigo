@@ -1,0 +1,53 @@
+O Que é SOA?
+https://pt.wikipedia.org/wiki/Service-oriented_architecture
+https://www.oasis-open.org/committees/download.php/19679/soa-rm-cs.pdf
+livro
+
+Arquitetura orientada a serviços ou SOA (Service-Oriented Architecture) é descrita de forma diferente por vários autores, para o Gartner Group, SOA é uma abordagem arquitetural corporativa que permite a criação de serviços de negócio interoperáveis que podem facilmente ser reutilizados e compartilhados entre aplicações e empresas. 
+
+Alguns o vêem como um estilo técnico de arquitetura que fornece os meios para integrar sistemas distintos e expor as funções de negócios reutilizáveis. Outros autores, no entanto, ter uma visão muito mais ampla:
+
+A arquitetura orientada a serviços é um estilo de design que orienta todos os aspectos da criação e utilização de serviços de negócios em todo o seu ciclo de vida (desde a concepção à aposentadoria). [Newcomer, Lomow, p. 13]
+
+//TODO verificar tradução 
+Service Oriented Architecture (SOA) is a paradigm for organizing and utilizing
+distributed capabilities that may be under the control of different
+ownership domains. [OASIS Ref Model]
+
+Arquitetura Orientada a Serviços (SOA) é um paradigma para organização e utilização de capacidades distribuídas que podem estar sob controle de diferentes domínios proprietários.
+
+//
+
+falar mais dessa porra
+
+Principios de design
+https://marcobaccaro.wordpress.com/2013/11/29/8-principios-de-design-para-soa/
+http://soapatterns.org/introduction
+
+//TODO pegar conceito de principios com os caras
+
+A seguir estão os princípios de design de serviços listador por Thomas ERL(2009):
+
+Service Abstraction
+Service Autonomy
+Service Composability 
+Service Discoverability
+Service Loose Coupling
+Service Reusability
+Service Statelessness
+Service-Orientation and Interoperability
+Standardized Service Contract
+
+Especificamente, a potencial relação entre princípios e padrões de projeto serviço de orientação pode ser resumido da seguinte forma:
+
+    Princípios de design são aplicados coletivamente solução lógica, a fim de moldá-la de tal maneira que ela promove as principais características de design que suportam os objetivos estratégicos associados à computação orientada a serviços.
+   Os padrões de design fornecem soluções para problemas comuns encontrados ao aplicar os princípios de design e ao estabelecer um ambiente adequado para a execução lógica concebida de acordo com os princípios de orientação a serviços.
+
+Princípios de design de serviço de orientação tem um outro papel em que eles definem coletivamente orientação a serviços como um paradigma do projeto. Em última análise, é melhor para ver padrões de design como fornecer suporte para a realização dos princípios do projeto e seus objetivos associados.
+
+Padrões de Design
+SOA Design Patterns - Thomas Erl
+http://soapatterns.org/introduction
+
+Serão descritos nesse artigos apenas os chamados padrões de serviços fundamentais, pois esses constituem um conjunto de padrões básicos de design que ajudam a estabelecer as características fundamentais do projeto de serviço através de uma sequência de aplicação sugerida. Coletivamente, esses padrões formam a aplicação mais básica do serviço de orientação.
+
