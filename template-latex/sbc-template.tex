@@ -1,9 +1,9 @@
 \documentclass[12pt]{article}
-
 \usepackage{sbc-template}
-
-\usepackage{graphicx,url}
-
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[none]{hyphenat}
+\usepackage{indentfirst} % Identa o primeiro parágrafo de cada 
 \usepackage[brazil]{babel}   
 %\usepackage[latin1]{inputenc}  
 \usepackage[utf8]{inputenc}  
@@ -28,11 +28,11 @@
 \maketitle
 
 \begin{abstract}
-O objetivo desse artigo é apresentar os principais conceitos de uma Arquitetura orientada a serviços (SOA) e seus seus princípios, bem como padrões de serviços fundamentais apresentados por Thomas Erl em seu livro SOA Design Patterns (2008), que são aplicados na solução de problemas comuns encontrados no desenvolvimento de sistemas baseados em SOA. A união de princípios e padrões de design, formam um conjunto de boas práticas essencial a qualquer projeto.   
+O objetivo desse artigo é apresentar os principais conceitos de uma Arquitetura orientada a serviços (SOA) e seus seus princípios, bem como padrões de serviços fundamentais apresentados por Thomas Erl em seu livro \cite{erl_padroes}, que são aplicados na solução de problemas comuns encontrados no desenvolvimento de sistemas baseados em SOA. A união de princípios e padrões de design, formam um conjunto de boas práticas essencial a qualquer projeto.   
 \end{abstract}
    
 \begin{resumo} 
-The objective of this paper is to present the main concepts of a Service-Oriented Architecture (SOA) and its principles, well as Foundational Service Patterns presented by Thomas Erl in his book SOA Design Patterns (2008), which are applied in solving common problems encountered in the development of systems based on SOA. The union of principles and design patterns, form a core set of good practices to any project.
+The objective of this paper is to present the main concepts of a Service-Oriented Architecture (SOA) and its principles, well as Foundational Service Patterns presented by Thomas Erl in his book \cite{erl_padroes}, which are applied in solving common problems encountered in the development of systems based on SOA. The union of principles and design patterns, form a core set of good practices to any project.
 \end{resumo}
 
 
@@ -42,16 +42,16 @@ Arquitetura orientada a serviços ou SOA (Service-Oriented Architecture) é desc
 
 SOA é uma abordagem arquitetural corporativa que permite a criação de serviços de negócio interoperáveis que podem facilmente ser reutilizados e compartilhados entre aplicações e empresas.
 
-A arquitetura orientada a serviços é um estilo de design que orienta todos os aspectos da criação e utilização de serviços de negócios em todo o seu ciclo de vida (desde a concepção à aposentadoria). %\cite{newcomer}
+A arquitetura orientada a serviços é um estilo de design que orienta todos os aspectos da criação e utilização de serviços de negócios em todo o seu ciclo de vida (desde a concepção à aposentadoria). \cite{newcomer}
 
-Arquitetura Orientada a Serviços (SOA) é um paradigma para organização e utilização de capacidades distribuídas que podem estar sob controle de diferentes domínios proprietários. %\cite{oasis}
+Arquitetura Orientada a Serviços (SOA) é um paradigma para organização e utilização de capacidades distribuídas que podem estar sob controle de diferentes domínios proprietários. \cite{oasis}
 
 De maneira simples, SOA é uma abordagem de negócios para criar sistemas de TI (Tecnologia de Informação) que permitem alavancar recursos existentes, criar novos recursos e, principalmente, estar preparado para inevitáveis alterações exigidas pelo mercado, obtendo mais produtividade e lucro para a empresa.
 
 
 \section{Princípios de Design} 
 
-Os Princípios de design são uma representação do paradigma de design orientado a serviços, eles estipulam boas praticas para construção de um sistema baseado em SOA bem implementado. A seguir estão os princípios de design de serviços listados por %\citeonline{thomas}:
+Os Princípios de design são uma representação do paradigma de design orientado a serviços, eles estipulam boas praticas para construção de um sistema baseado em SOA bem implementado. A seguir estão os princípios de design de serviços listados por %\cite{thomas}:
 
 \begin{itemize}
 \item Service Abstraction
@@ -67,39 +67,74 @@ Os Princípios de design são uma representação do paradigma de design orienta
 
 Especificamente, a potencial relação entre princípios e padrões de projeto orientados a serviço pode ser resumido da seguinte forma:
 
-    Princípios de design são aplicados coletivamente solução lógica, a fim de moldá-la de tal maneira que ela promove as principais características de design que suportam os objetivos estratégicos associados à computação orientada a serviços.
-   Os padrões de design fornecem soluções para problemas comuns encontrados ao aplicar os princípios de design e ao estabelecer um ambiente adequado para a execução lógica concebida de acordo com os princípios de orientação a serviços.
+Princípios de design são aplicados em conjunto para uma solução lógica, a fim de moldá-la de tal maneira que ela promova características chaves de design que suportem os objetivos estratégicos associados à computação orientada a serviços.
+Os padrões de design fornecem soluções para problemas comuns encontrados ao aplicar os princípios de design e ao estabelecer um ambiente adequado para a execução lógica concebida de acordo com os princípios de orientação a serviços.
 
 \section{Padrões de Design}
 
-No livro SOA Design Patterns de Thomas Erl, são apresentados diversos padrões, contudo serão descritos nesse artigo apenas os chamados padrões de serviços fundamentais, pois esses constituem um conjunto de padrões básicos de design que ajudam a estabelecer as características fundamentais do projeto de serviço através de uma sequência de aplicação sugerida. Coletivamente, esses padrões formam a aplicação mais básica de orientação a serviço.
+Em \cite{erl_padroes}, são apresentados diversos padrões, contudo serão descritos nesse artigo apenas os chamados padrões de serviços fundamentais, pois esses constituem um conjunto de padrões básicos de design que ajudam a estabelecer as características fundamentais do projeto de serviço através de uma sequência de aplicação sugerida. Coletivamente, esses padrões formam a aplicação mais básica de orientação a serviço.
 
 
 \subsection{Agnostic Capability}
 
-The subsection titles must be in boldface, 12pt, flush left.
+Funções de serviços derivadas de interesses específicos podem não ser uteis para multiplos consumidores, assim reduzem a potencial reusabilidade do serviço.
+
+Para resolver este problema, o \textit{Agnostic Capability} recomenda particionar a lógica do serviço em um conjunto de capacidades bem definidas que que abordam preocupações comuns não específicos de um problema.
+
+Através da aplicação deste padrão, a lógica de serviço são agrupadas dentro de um contexto determinado serviço, disponibilizado como um conjunto de recursos bem definidos e complementares. Veja a figura \ref{fig:1}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=14cm]{img/fig1.eps}
+\caption{Agnostic Capability}
+\label{fig:1}
+\end{figure}
 
 \subsection{Agnostic Context}
 
-The subsection titles must be in boldface, 12pt, flush left.
+Muita lógica agrupada com um único propósito resultam em serviços com pouco ou nenhum potencial de reutilização, acabando por gerar redundância dentro de uma empresa.
+
+Para este tipo de problema, aqui é sugerido que a lógica que não é específica para uma finalidade seja isolada em serviços separados com contextos diferentes. Isto torna a solução reutilizável em um nível empresarial. Para entedermos melhor, vejamos a figura \ref{fig:2}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=14cm]{img/fig2.eps}
+	\caption{Agnostic Context}
+	\label{fig:2}
+\end{figure}
+
+A aplicação desse padrão resulta em um subconjunto da solução lógica e em seguida são distribuídos em serviços com contextos específicos.
 
 \subsection{Functional Decomposition}
 
-The subsection titles must be in boldface, 12pt, flush left.
+Para resolver grandes e complexos problemas uma lógica também complexa deve ser criada, isto resulta em um serviço autônomo com restrições quanto sua reutilização.	
+Para evitar este tipo de problema o padrão \textit{Funcional Decomposition} sugere que quebremos este grande problema em um conjunto de problemas menores. Isto permite que as soluções também seja decompostas em um conjunto de soluções mais simples.
+
+Assim como na computação distribuída que baseia-se em uma abordagem  onde um grande problema é decomposto, este padrão resulta na decomposição do problema maior em problemas menores, como mostra figura abaixo.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=14cm]{img/fig3.eps}
+\caption{Functional Decomposition}
+\label{fig:3}
+\end{figure}
 
 \subsection{Non-Agnostic Context}
 
 The subsection titles must be in boldface, 12pt, flush left.
 
-% if you need to include a figure(eps format), code:
-% \begin{figure}[ht]
-% \centering
-% \includegraphics[width=.5\textwidth]{fig}
-% \caption{A typical figure}
-% \label{fig:exampleFig1}
-% \end{figure}
-
 \section{Considerações Finais}
+
+Este artigo apresentou conceitos básicos e fundamentais para o universo de SOA e algumas soluções para problemas comuns encontrados na aplicação de princípios de design, vale ressaltar a importância que uma aplicação adequada com esses princípios e padrões de design tem para construção de sistemas que atendam as características relativas ao paradigma de orientação a serviço, os padrões aqui apresentados são uma pequena parte de um conjunto enorme de padrões que podem ser usados em SOA, quase em sua maioria, estes estão descritos de forma detalhada nos livros SOA Principios de Design de Serviços e SOA Padrões de Design, ambos de Thomas Erl. Por fim é importante dizer que a visão de SOA traz um melhor entendimento de como pensar em software e como aproximar soluções tecnológicas de problemas reais.
+
+\nocite{daigneau}
+\nocite{gartner}
+\nocite{erl_principio}
+\nocite{dev1}
+\nocite{dev2}
+\nocite{baccaro}
+\nocite{wiki}
+\nocite{soa_patterns}
 
 \bibliographystyle{sbc}
 \bibliography{sbc-template}
