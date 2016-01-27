@@ -29,17 +29,18 @@
 \maketitle
 
 \begin{abstract}
-O objetivo desse artigo é apresentar os principais conceitos de uma Arquitetura orientada a serviços (SOA) e seus seus princípios, bem como padrões de serviços fundamentais apresentados por Thomas Erl em seu livro \cite{erl_padroes}, que são aplicados na solução de problemas comuns encontrados no desenvolvimento de sistemas baseados em SOA. A união de princípios e padrões de design, formam um conjunto de boas práticas essencial a qualquer projeto.   
+	The objective of this paper is to present the main concepts of a Service-Oriented Architecture (SOA) and its principles, well as Foundational Service Patterns presented by Thomas Erl in his book \cite{erl_padroes}, which are applied in solving common problems encountered in the development of systems based on SOA. The union of principles and design patterns, form a core set of good practices to any project.
+
 \end{abstract}
    
 \begin{resumo} 
-The objective of this paper is to present the main concepts of a Service-Oriented Architecture (SOA) and its principles, well as Foundational Service Patterns presented by Thomas Erl in his book \cite{erl_padroes}, which are applied in solving common problems encountered in the development of systems based on SOA. The union of principles and design patterns, form a core set of good practices to any project.
+	O objetivo desse artigo é apresentar os principais conceitos de uma Arquitetura orientada a serviços (SOA) e seus seus princípios, bem como padrões de serviços fundamentais apresentados por Thomas Erl em seu livro \cite{erl_padroes}, que são aplicados na solução de problemas comuns encontrados no desenvolvimento de sistemas baseados em SOA. A união de princípios e padrões de design, formam um conjunto de boas práticas essencial a qualquer projeto.   
 \end{resumo}
 
 
 \section{O Que é SOA?}
 
-Arquitetura orientada a serviços ou SOA (Service-Oriented Architecture) é descrita de forma diferente por vários autores, alguns o vêem como um estilo técnico de arquitetura que fornece os meios para integrar sistemas distintos e expor as funções de negócios reutilizáveis. Outros autores, no entanto, ter uma visão muito mais ampla:
+Arquitetura orientada a serviços ou SOA (Service-Oriented Architecture) é descrita de forma diferente por vários autores, alguns o vêem como um estilo técnico de arquitetura que fornece os meios para integrar sistemas distintos e expor as funções de negócios reutilizáveis. Outros autores, no entanto, tem uma visão muito mais ampla:
 
 SOA é uma abordagem arquitetural corporativa que permite a criação de serviços de negócio interoperáveis que podem facilmente ser reutilizados e compartilhados entre aplicações e empresas.
 
@@ -52,7 +53,7 @@ De maneira simples, SOA é uma abordagem de negócios para criar sistemas de TI 
 
 \section{Princípios de Design} 
 
-Os Princípios de design são uma representação do paradigma de design orientado a serviços, eles estipulam boas praticas para construção de um sistema baseado em SOA bem implementado. A seguir estão os princípios de design de serviços listados por %\cite{thomas}:
+Os Princípios de design são uma representação do paradigma de design orientado a serviços, eles estipulam boas praticas para construção de um sistema baseado em SOA bem implementado. A seguir estão os princípios de design de serviços listados por \cite{erl_principio}:
 
 \begin{itemize}
 \item Service Abstraction
@@ -78,7 +79,7 @@ Em \cite{erl_padroes}, são apresentados diversos padrões, contudo serão descr
 
 \subsection{Agnostic Capability}
 
-Funções de serviços derivadas de interesses específicos podem não ser uteis para multiplos consumidores, assim reduzem a potencial reusabilidade do serviço.
+Funções de serviços derivadas de interesses específicos podem não ser uteis para múltiplos consumidores, assim reduzem a potencial reusabilidade do serviço.
 
 Para resolver este problema, o \textit{Agnostic Capability} recomenda particionar a lógica do serviço em um conjunto de capacidades bem definidas que que abordam preocupações comuns não específicos de um problema.
 
@@ -95,7 +96,7 @@ Através da aplicação deste padrão, a lógica de serviço são agrupadas dent
 
 Muita lógica agrupada com um único propósito resultam em serviços com pouco ou nenhum potencial de reutilização, acabando por gerar redundância dentro de uma empresa.
 
-Para este tipo de problema, aqui é sugerido que a lógica que não é específica para uma finalidade seja isolada em serviços separados com contextos diferentes. Isto torna a solução reutilizável em um nível empresarial. Para entedermos melhor, vejamos a figura \ref{fig:2}.
+Para este tipo de problema, aqui é sugerido que a lógica que não é específica para uma finalidade seja isolada em serviços separados com contextos diferentes. Isto torna a solução reutilizável em um nível empresarial. Para entendermos melhor, vejamos a figura \ref{fig:2}.
 
 \begin{figure}[H]
 	\centering
@@ -125,7 +126,7 @@ Assim como na computação distribuída que baseia-se em uma abordagem  onde um 
 
 Quando se trata do padrão Non-Agnostic Context, ele foca na abstração e na posição da lógica de solução que seja agnóstica para tarefas e processos de negócios que resultam na lógica não-agnóstica sendo filtrada e rebaixada para encapsulação dentro dos sistemas que não fazem parte da relação dos serviços. Com isso, não se é aplicada à solução lógica não-agnóstica, a computação orientada a serviços, pois pode comprometer a qualidade das composições do serviço que a lógica pode ser responsável por controlar.
 
-Uma forma de se contornar esse problema seria encapsular a solução lógica não-agnóstica adequada por um serviço que seja correspondente ao contexto funcional não-agnóstica. Um outro benefício seria que a lógica como o serviço está mais disponível para qualquer involvimento inesperado nas composições do serviço.
+Uma forma de se contornar esse problema seria encapsular a solução lógica não-agnóstica adequada por um serviço que seja correspondente ao contexto funcional não-agnóstica. Um outro benefício seria que a lógica como o serviço está mais disponível para qualquer envolvimento inesperado nas composições do serviço.
 
 Em combinação com o Process Abstraction, este padrão é aplicado para se estabelecer uma camada de serviço padrão, e não há uma forma exata de o padrão ser colocado antes ou depois do contexto agnóstico. De toda a forma, o resultado final é que tudo que se considera adequado para encapsulação do serviço acaba organizado em um conjunto de contextos de serviço bem definidos.
 
@@ -147,7 +148,7 @@ Seguindo essa linha, qualquer lógica considerada adequada para encapsulamento d
 
 \section{Considerações Finais}
 
-Este artigo apresentou conceitos básicos e fundamentais para o universo de SOA e algumas soluções para problemas comuns encontrados na aplicação de princípios de design, vale ressaltar a importância que uma aplicação adequada com esses princípios e padrões de design tem para construção de sistemas que atendam as características relativas ao paradigma de orientação a serviço, os padrões aqui apresentados são uma pequena parte de um conjunto enorme de padrões que podem ser usados em SOA, quase em sua maioria, estes estão descritos de forma detalhada nos livros SOA Principios de Design de Serviços e SOA Padrões de Design, ambos de Thomas Erl. Por fim é importante dizer que a visão de SOA traz um melhor entendimento de como pensar em software e como aproximar soluções tecnológicas de problemas reais.
+Este artigo apresentou conceitos básicos e fundamentais para o universo de SOA e algumas soluções para problemas comuns encontrados na aplicação de princípios de design, vale ressaltar a importância que uma aplicação adequada com esses princípios e padrões de design tem para construção de sistemas que atendam as características relativas ao paradigma de orientação a serviço, os padrões aqui apresentados são uma pequena parte de um conjunto enorme de padrões que podem ser usados em SOA, quase em sua maioria, estes estão descritos de forma detalhada nos livros SOA Princípios de Design de Serviços e SOA Padrões de Design, ambos de Thomas Erl. Por fim é importante dizer que a visão de SOA traz um melhor entendimento de como pensar em software e como aproximar soluções tecnológicas de problemas reais.
 
 \nocite{daigneau}
 \nocite{gartner}
