@@ -20,7 +20,7 @@
 
 \address{Instituto Federal de Educação, Ciência e Tecnologia da Paraíba - Campus Cajazeiras (IFPB)\\
   Cajazeiras -- PB -- Brazil
-  \email{joaomarccos.ads@gmail.com, kleontegomes@gmail.com,
+  \email{joaomarccos.ads@gmail.com, kleontesousa@gmail.com,
   rafaeltavares.rofino198@gmail.com}
 }
 
@@ -108,7 +108,8 @@ A aplicação desse padrão resulta em um subconjunto da solução lógica e em 
 
 \subsection{Functional Decomposition}
 
-Para resolver grandes e complexos problemas uma lógica também complexa deve ser criada, isto resulta em um serviço autônomo com restrições quanto sua reutilização.	
+Para resolver grandes e complexos problemas uma lógica também complexa deve ser criada, isto resulta em um serviço autônomo com restrições quanto sua reutilização.
+
 Para evitar este tipo de problema o padrão \textit{Funcional Decomposition} sugere que quebremos este grande problema em um conjunto de problemas menores. Isto permite que as soluções também seja decompostas em um conjunto de soluções mais simples.
 
 Assim como na computação distribuída que baseia-se em uma abordagem  onde um grande problema é decomposto, este padrão resulta na decomposição do problema maior em problemas menores, como mostra figura abaixo.
@@ -122,7 +123,27 @@ Assim como na computação distribuída que baseia-se em uma abordagem  onde um 
 
 \subsection{Non-Agnostic Context}
 
-The subsection titles must be in boldface, 12pt, flush left.
+Quando se trata do padrão Non-Agnostic Context, ele foca na abstração e na posição da lógica de solução que seja agnóstica para tarefas e processos de negócios que resultam na lógica não-agnóstica sendo filtrada e rebaixada para encapsulação dentro dos sistemas que não fazem parte da relação dos serviços. Com isso, não se é aplicada à solução lógica não-agnóstica, a computação orientada a serviços, pois pode comprometer a qualidade das composições do serviço que a lógica pode ser responsável por controlar.
+
+Uma forma de se contornar esse problema seria encapsular a solução lógica não-agnóstica adequada por um serviço que seja correspondente ao contexto funcional não-agnóstica. Um outro benefício seria que a lógica como o serviço está mais disponível para qualquer involvimento inesperado nas composições do serviço.
+
+Em combinação com o Process Abstraction, este padrão é aplicado para se estabelecer uma camada de serviço padrão, e não há uma forma exata de o padrão ser colocado antes ou depois do contexto agnóstico. De toda a forma, o resultado final é que tudo que se considera adequado para encapsulação do serviço acaba organizado em um conjunto de contextos de serviço bem definidos.
+
+Pelo fato de precisar ser aplicado a uma solução lógica básica de um serviço não-agnóstico, a computação orientada a serviços consumirá muito mais tempo e será mais caro que se existisse em um programa paralelo à relação de serviço. Quando se estuda o contexto não-agnóstico, vale salientar que ele é aplicado de forma subsequente ao Service Encapsulation.
+
+De forma que os tipos de serviços que mais geralmente este padrão seriam aqueles baseados nos modelos de serviço centrado em tarefas. A natureza de finalidade única da lógica encapsulada por serviços baseados em contextos não-agnósticos é associada de forma geral com a lógica da composição necessária para automatizar uma tarefa de negócio.
+
+\subsection{Service Encapsulation}
+
+Discorrendo sobre o Service Encapsulation, podemos citar que muitos sistemas desenvolvidos no passado foram construídos na forma de um grupo de sistemas relacionados representando como um corpo maior e dividido de uma solução lógica poderia continuar a existir dentro de um contorno de aplicação isolado, de forma que para que se aumentasse a escalabilidade, melhorasse a segurança, aumentasse a confiabilidade, utilizasse o reuso, a solução lógica foi dividida em unidades menores.
+
+Vale mencionar que a solução lógica adequada para a classificação como um recurso corporativo pode ser encapsulado por e exposto como um serviço. Quanto à sua aplicação, faz-se necessário identificar e filtrar a solução lógica que seja adequada como um recurso corporativo.
+
+Para a solução lógica encapsulada se tornar um membro efetivo de uma relação de serviço, faz-se necessário ser modelada por outros padrões e princípios para seja designada para estar de acordo com as metas estratégicas associadas com a computação orientada a serviços. Portanto é necessário um sólido conhecimento do paradigma de design orientado a serviços a fim de melhor determinar quando a lógica é ou não adequada para o encapsulamento do serviço. Com isso, como esta lógica é determinada é baseada na metodologia utilizada e na maturidade na relação do serviço existente.
+
+Não há impacto imediato por conta da aplicação do padrão resultar na filtragem e identificação da lógica, todavia deve-se notar que sua aplicação é limitada ao processo de filtragem apenas. Portanto, a sequência desse padrão tem que ser parte de uma análise maior que abrange a modelagem da solução lógica.
+
+Seguindo essa linha, qualquer lógica considerada adequada para encapsulamento do serviço é agrupada em serviços de única ou multifinalidades. A identificação da lógica adequada para o encapsulamento do serviço e o agrupamento e distribuição daquela lógica dentro de contextos funcionais distintos estabelece contornos fundamentais de serviço. Para definir o contorno mais adequado para um serviço, é necessário que se estabeleça o contexto funcional mais adequado.
 
 \section{Considerações Finais}
 
